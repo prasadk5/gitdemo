@@ -1,0 +1,560 @@
+[33mcommit 6496136b02edb302ce75f89f7e7bcbf792d16fa3[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: prasadk5 <kotraprasad66@gmail.com>
+Date:   Tue May 22 08:08:24 2018 +0530
+
+    updated set payload
+
+[1mdiff --git a/.classpath b/.classpath[m
+[1mnew file mode 100644[m
+[1mindex 0000000..15db930[m
+[1m--- /dev/null[m
+[1m+++ b/.classpath[m
+[36m@@ -0,0 +1,11 @@[m
+[32m+[m[32m<classpath>[m
+[32m+[m[32m  <classpathentry kind="src" path="src/main/api" excluding="**/*.java"/>[m
+[32m+[m[32m  <classpathentry kind="src" path="src/main/app" excluding="**/*.java"/>[m
+[32m+[m[32m  <classpathentry kind="src" path="src/main/java"/>[m
+[32m+[m[32m  <classpathentry kind="src" path="src/main/resources" excluding="**/*.java"/>[m
+[32m+[m[32m  <classpathentry kind="src" path="src/test/java" output="target/test-classes"/>[m
+[32m+[m[32m  <classpathentry kind="src" path="src/test/resources" output="target/test-classes" excluding="**/*.java"/>[m
+[32m+[m[32m  <classpathentry kind="output" path="target/classes"/>[m
+[32m+[m[32m  <classpathentry kind="con" path="MULE_RUNTIME"/>[m
+[32m+[m[32m  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>[m
+[32m+[m[32m</classpath>[m
+\ No newline at end of file[m
+[1mdiff --git a/.project b/.project[m
+[1mnew file mode 100644[m
+[1mindex 0000000..17e2a3b[m
+[1m--- /dev/null[m
+[1m+++ b/.project[m
+[36m@@ -0,0 +1,21 @@[m
+[32m+[m[32m<projectDescription>[m
+[32m+[m[32m  <name>gitdemo</name>[m
+[32m+[m[32m  <comment/>[m
+[32m+[m[32m  <projects/>[m
+[32m+[m[32m  <buildSpec>[m
+[32m+[m[32m    <buildCommand>[m
+[32m+[m[32m      <name>org.eclipse.jdt.core.javabuilder</name>[m
+[32m+[m[32m    </buildCommand>[m
+[32m+[m[32m    <buildCommand>[m
+[32m+[m[32m      <name>org.mule.tooling.core.muleBuilder</name>[m
+[32m+[m[32m    </buildCommand>[m
+[32m+[m[32m    <buildCommand>[m
+[32m+[m[32m      <name>org.mule.tooling.maven.mavenBuilder</name>[m
+[32m+[m[32m    </buildCommand>[m
+[32m+[m[32m  </buildSpec>[m
+[32m+[m[32m  <natures>[m
+[32m+[m[32m    <nature>org.mule.tooling.maven.mavenNature</nature>[m
+[32m+[m[32m    <nature>org.eclipse.jdt.core.javanature</nature>[m
+[32m+[m[32m    <nature>org.mule.tooling.core.muleNature</nature>[m
+[32m+[m[32m  </natures>[m
+[32m+[m[32m</projectDescription>[m
+\ No newline at end of file[m
+[1mdiff --git a/.settings/org.eclipse.jdt.core.prefs b/.settings/org.eclipse.jdt.core.prefs[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3a21537[m
+[1m--- /dev/null[m
+[1m+++ b/.settings/org.eclipse.jdt.core.prefs[m
+[36m@@ -0,0 +1,11 @@[m
+[32m+[m[32meclipse.preferences.version=1[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.codegen.targetPlatform=1.8[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.codegen.unusedLocal=preserve[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.compliance=1.8[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.debug.lineNumber=generate[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.debug.localVariable=generate[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.debug.sourceFile=generate[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.problem.assertIdentifier=error[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.problem.enumIdentifier=error[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.source=1.8[m
+[1mdiff --git a/mule-project.xml b/mule-project.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..cccb9e5[m
+[1m--- /dev/null[m
+[1m+++ b/mule-project.xml[m
+[36m@@ -0,0 +1,5 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8" standalone="yes"?>[m
+[32m+[m[32m<mule-project xmlns="http://www.mulesoft.com/tooling/project" runtimeId="org.mule.tooling.server.3.9.0.ee" schemaVersion="5.3.0.0">[m
+[32m+[m[32m    <name>gitdemo</name>[m
+[32m+[m[32m    <description></description>[m
+[32m+[m[32m</mule-project>[m
+[1mdiff --git a/pom.xml b/pom.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f279d3a[m
+[1m--- /dev/null[m
+[1m+++ b/pom.xml[m
+[36m@@ -0,0 +1,161 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8" standalone="no"?>[m
+[32m+[m[32m<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">[m
+[32m+[m
+[32m+[m	[32m<modelVersion>4.0.0</modelVersion>[m
+[32m+[m	[32m<groupId>com.mycompany</groupId>[m
+[32m+[m	[32m<artifactId>gitdemo</artifactId>[m
+[32m+[m[32m    <version>1.0.0-SNAPSHOT</version>[m
+[32m+[m[32m    <packaging>mule</packaging>[m
+[32m+[m	[32m<name>Mule gitdemo Application</name>[m
+[32m+[m
+[32m+[m[32m    <properties>[m
+[32m+[m		[32m<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>[m
+[32m+[m		[32m<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>[m
+[32m+[m
+[32m+[m		[32m<mule.version>3.9.0</mule.version>[m
+[32m+[m[41m    [m	[32m<mule.tools.version>1.2</mule.tools.version>[m
+[32m+[m	[32m</properties>[m
+[32m+[m
+[32m+[m	[32m<build>[m
+[32m+[m		[32m<plugins>[m
+[32m+[m			[32m<plugin>[m
+[32m+[m				[32m<groupId>org.mule.tools.maven</groupId>[m
+[32m+[m				[32m<artifactId>mule-app-maven-plugin</artifactId>[m
+[32m+[m				[32m<version>${mule.tools.version}</version>[m
+[32m+[m				[32m<extensions>true</extensions>[m
+[32m+[m				[32m<configuration>[m
+[32m+[m[32m                    <copyToAppsDirectory>true</copyToAppsDirectory>[m
+[32m+[m				[32m</configuration>[m
+[32m+[m			[32m</plugin>[m
+[32m+[m			[32m<plugin>[m
+[32m+[m				[32m<groupId>org.codehaus.mojo</groupId>[m
+[32m+[m				[32m<artifactId>build-helper-maven-plugin</artifactId>[m
+[32m+[m				[32m<version>1.7</version>[m
+[32m+[m				[32m<executions>[m
+[32m+[m					[32m<execution>[m
+[32m+[m						[32m<id>add-resource</id>[m
+[32m+[m						[32m<phase>generate-resources</phase>[m
+[32m+[m						[32m<goals>[m
+[32m+[m							[32m<goal>add-resource</goal>[m
+[32m+[m						[32m</goals>[m
+[32m+[m						[32m<configuration>[m
+[32m+[m							[32m<resources>[m
+[32m+[m								[32m<resource>[m
+[32m+[m									[32m<directory>src/main/app/</directory>[m
+[32m+[m								[32m</resource>[m
+[32m+[m								[32m<resource>[m
+[32m+[m									[32m<directory>src/main/api/</directory>[m
+[32m+[m								[32m</resource>[m
+[32m+[m								[32m<resource>[m
+[32m+[m									[32m<directory>mappings/</directory>[m
+[32m+[m								[32m</resource>[m
+[32m+[m							[32m</resources>[m
+[32m+[m						[32m</configuration>[m
+[32m+[m					[32m</execution>[m
+[32m+[m				[32m</executions>[m
+[32m+[m			[32m</plugin>[m
+[32m+[m		[32m</plugins>[m
+[32m+[m	[32m</build>[m
+[32m+[m
+[32m+[m	[32m<!-- Mule Dependencies -->[m
+[32m+[m	[32m<dependencies>[m
+[32m+[m		[32m<!-- Xml configuration -->[m
+[32m+[m		[32m<dependency>[m
+[32m+[m[41m        [m	[32m<groupId>com.mulesoft.muleesb</groupId>[m
+[32m+[m			[32m<artifactId>mule-core-ee</artifactId>[m
+[32m+[m			[32m<version>${mule.version}</version>[m
+[32m+[m			[32m<scope>provided</scope>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m		[32m<!-- Xml configuration -->[m
+[32m+[m		[32m<dependency>[m
+[32m+[m			[32m<groupId>com.mulesoft.muleesb.modules</groupId>[m
+[32m+[m			[32m<artifactId>mule-module-spring-config-ee</artifactId>[m
+[32m+[m			[32m<version>${mule.version}</version>[m
+[32m+[m			[32m<scope>provided</scope>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m		[32m<!-- Mule Transports -->[m
+[32m+[m		[32m<dependency>[m
+[32m+[m			[32m<groupId>org.mule.transports</groupId>[m
+[32m+[m			[32m<artifactId>mule-transport-file</artifactId>[m
+[32m+[m			[32m<version>${mule.version}</version>[m
+[32m+[m			[32m<scope>provided</scope>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m		[32m<dependency>[m
+[32m+[m			[32m<groupId>org.mule.transports</groupId>[m
+[32m+[m			[32m<artifactId>mule-transport-http</artifactId>[m
+[32m+[m			[32m<version>${mule.version}</version>[m
+[32m+[m			[32m<scope>provided</scope>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m		[32m<dependency>[m
+[32m+[m[41m        [m	[32m<groupId>com.mulesoft.muleesb.transports</groupId>[m
+[32m+[m			[32m<artifactId>mule-transport-jdbc-ee</artifactId>[m
+[32m+[m			[32m<version>${mule.version}</version>[m
+[32m+[m			[32m<scope>provided</scope>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m		[32m<dependency>[m
+[32m+[m[41m        [m	[32m<groupId>com.mulesoft.muleesb.transports</groupId>[m
+[32m+[m			[32m<artifactId>mule-transport-jms-ee</artifactId>[m
+[32m+[m			[32m<version>${mule.version}</version>[m
+[32m+[m			[32m<scope>provided</scope>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m		[32m<dependency>[m
+[32m+[m			[32m<groupId>org.mule.transports</groupId>[m
+[32m+[m			[32m<artifactId>mule-transport-vm</artifactId>[m
+[32m+[m			[32m<version>${mule.version}</version>[m
+[32m+[m			[32m<scope>provided</scope>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m		[32m<!-- Mule Modules -->[m
+[32m+[m		[32m<dependency>[m
+[32m+[m			[32m<groupId>org.mule.modules</groupId>[m
+[32m+[m			[32m<artifactId>mule-module-scripting</artifactId>[m
+[32m+[m			[32m<version>${mule.version}</version>[m
+[32m+[m			[32m<scope>provided</scope>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m		[32m<dependency>[m
+[32m+[m			[32m<groupId>org.mule.modules</groupId>[m
+[32m+[m			[32m<artifactId>mule-module-xml</artifactId>[m
+[32m+[m			[32m<version>${mule.version}</version>[m
+[32m+[m			[32m<scope>provided</scope>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m		[32m<!-- for testing -->[m
+[32m+[m		[32m<dependency>[m
+[32m+[m			[32m<groupId>org.mule.tests</groupId>[m
+[32m+[m			[32m<artifactId>mule-tests-functional</artifactId>[m
+[32m+[m			[32m<version>${mule.version}</version>[m
+[32m+[m			[32m<scope>test</scope>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m	[32m<dependency>[m
+[32m+[m[32m            <groupId>org.mule.modules</groupId>[m
+[32m+[m[32m            <artifactId>mule-module-http</artifactId>[m
+[32m+[m[32m            <version>${mule.version}</version>[m
+[32m+[m[32m            <scope>provided</scope>[m
+[32m+[m[32m        </dependency>[m
+[32m+[m[32m    </dependencies>[m
+[32m+[m
+[32m+[m	[32m<repositories>[m
+[32m+[m[32m          <repository>[m
+[32m+[m[32m            <id>Central</id>[m
+[32m+[m[32m            <name>Central</name>[m
+[32m+[m[32m            <url>http://repo1.maven.org/maven2/</url>[m
+[32m+[m[32m            <layout>default</layout>[m
+[32m+[m[32m        </repository>[m
+[32m+[m[32m        <repository>[m
+[32m+[m[32m            <id>mulesoft-releases</id>[m
+[32m+[m[32m            <name>MuleSoft Releases Repository</name>[m
+[32m+[m[32m            <url>http://repository.mulesoft.org/releases/</url>[m
+[32m+[m[32m            <layout>default</layout>[m
+[32m+[m[32m        </repository>[m
+[32m+[m[32m    </repositories>[m
+[32m+[m[32m    <pluginRepositories>[m
+[32m+[m[32m        <pluginRepository>[m
+[32m+[m[32m            <id>mulesoft-release</id>[m
+[32m+[m[32m            <name>mulesoft release repository</name>[m
+[32m+[m[32m            <layout>default</layout>[m
+[32m+[m[32m            <url>http://repository.mulesoft.org/releases/</url>[m
+[32m+[m[32m            <snapshots>[m
+[32m+[m[32m                <enabled>false</enabled>[m
+[32m+[m[32m            </snapshots>[m
+[32m+[m[32m        </pluginRepository>[m
+[32m+[m[32m    </pluginRepositories>[m
+[32m+[m
+[32m+[m[32m</project>[m
+[1mdiff --git a/src/main/app/gitdemo.xml b/src/main/app/gitdemo.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..9ec2bcc[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/app/gitdemo.xml[m
+[36m@@ -0,0 +1,14 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m
+[32m+[m[32m<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"[m
+[32m+[m	[32mxmlns:spring="http://www.springframework.org/schema/beans"[m[41m [m
+[32m+[m	[32mxmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"[m
+[32m+[m	[32mxsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd[m
+[32m+[m[32mhttp://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd[m
+[32m+[m[32mhttp://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">[m
+[32m+[m[32m    <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration"/>[m
+[32m+[m[32m    <flow name="gitdemoFlow">[m
+[32m+[m[32m        <http:listener config-ref="HTTP_Listener_Configuration" path="/" doc:name="HTTP"/>[m
+[32m+[m[32m        <set-payload value="Hi Tejaswi Rao" doc:name="Set Payload"/>[m
+[32m+[m[32m    </flow>[m
+[32m+[m[32m</mule>[m
+[1mdiff --git a/src/main/app/mule-app.properties b/src/main/app/mule-app.properties[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
+[1mdiff --git a/src/main/app/mule-deploy.properties b/src/main/app/mule-deploy.properties[m
+[1mnew file mode 100644[m
+[1mindex 0000000..79e2f26[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/app/mule-deploy.properties[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m#** GENERATED CONTENT ** Mule Application Deployment Descriptor[m
+[32m+[m[32m#Tue May 22 07:59:27 IST 2018[m
+[32m+[m[32mredeployment.enabled=true[m
+[32m+[m[32mencoding=UTF-8[m
+[32m+[m[32mdomain=default[m
+[32m+[m[32mconfig.resources=gitdemo.xml[m
+[1mdiff --git a/src/main/resources/log4j2.xml b/src/main/resources/log4j2.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..042ed44[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/resources/log4j2.xml[m
+[36m@@ -0,0 +1,50 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="utf-8"?>[m
+[32m+[m[32m<Configuration>[m
+[32m+[m
+[32m+[m	[32m<!--These are some of the loggers you can enable.[m[41m [m
+[32m+[m	[32m    There are several more you can find in the documentation.[m[41m [m
+[32m+[m[32m        Besides this log4j configuration, you can also use Java VM environment variables[m
+[32m+[m[32m        to enable other logs like network (-Djavax.net.debug=ssl or all) and[m[41m [m
+[32m+[m[32m        Garbage Collector (-XX:+PrintGC). These will be append to the console, so you will[m[41m [m
+[32m+[m[32m        see them in the mule_ee.log file. -->[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    <Appenders>[m
+[32m+[m[32m        <RollingFile name="file" fileName="${sys:mule.home}${sys:file.separator}logs${sys:file.separator}gitdemo.log"[m[41m [m
+[32m+[m[32m                 filePattern="${sys:mule.home}${sys:file.separator}logs${sys:file.separator}gitdemo-%i.log">[m
+[32m+[m[32m            <PatternLayout pattern="%d [%t] %-5p %c - %m%n" />[m
+[32m+[m[32m            <SizeBasedTriggeringPolicy size="10 MB" />[m
+[32m+[m[32m            <DefaultRolloverStrategy max="10"/>[m
+[32m+[m[32m        </RollingFile>[m
+[32m+[m[32m    </Appenders>[m
+[32m+[m[32m    <Loggers>[m
+[32m+[m[41m    	[m
+[32m+[m[41m    	[m
+[32m+[m		[32m<!-- Http Logger shows wire traffic on DEBUG -->[m
+[32m+[m		[32m<AsyncLogger name="org.mule.module.http.internal.HttpMessageLogger" level="WARN"/>[m
+[32m+[m[41m	[m
+[32m+[m		[32m<!-- JDBC Logger shows queries and parameters values on DEBUG -->[m
+[32m+[m		[32m<AsyncLogger name="com.mulesoft.mule.transport.jdbc" level="WARN"/>[m
+[32m+[m[41m    [m
+[32m+[m[32m        <!-- CXF is used heavily by Mule for web services -->[m
+[32m+[m[32m        <AsyncLogger name="org.apache.cxf" level="WARN"/>[m
+[32m+[m
+[32m+[m[32m        <!-- Apache Commons tend to make a lot of noise which can clutter the log-->[m
+[32m+[m[32m        <AsyncLogger name="org.apache" level="WARN"/>[m
+[32m+[m
+[32m+[m[32m        <!-- Reduce startup noise -->[m
+[32m+[m[32m        <AsyncLogger name="org.springframework.beans.factory" level="WARN"/>[m
+[32m+[m
+[32m+[m[32m        <!-- Mule classes -->[m
+[32m+[m[32m        <AsyncLogger name="org.mule" level="INFO"/>[m
+[32m+[m[32m        <AsyncLogger name="com.mulesoft" level="INFO"/>[m
+[32m+[m
+[32m+[m[32m        <!-- Reduce DM verbosity -->[m
+[32m+[m[32m        <AsyncLogger name="org.jetel" level="WARN"/>[m
+[32m+[m[32m        <AsyncLogger name="Tracking" level="WARN"/>[m
+[32m+[m[41m        [m
+[32m+[m[32m        <AsyncRoot level="INFO">[m
+[32m+[m[32m            <AppenderRef ref="file" />[m
+[32m+[m[32m        </AsyncRoot>[m
+[32m+[m[32m    </Loggers>[m
+[32m+[m[32m</Configuration>[m
+\ No newline at end of file[m
+[1mdiff --git a/src/test/resources/log4j2-test.xml b/src/test/resources/log4j2-test.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6351ae0[m
+[1m--- /dev/null[m
+[1m+++ b/src/test/resources/log4j2-test.xml[m
+[36m@@ -0,0 +1,35 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<Configuration>[m
+[32m+[m[32m    <Appenders>[m
+[32m+[m[32m        <Console name="Console" target="SYSTEM_OUT">[m
+[32m+[m[32m            <PatternLayout pattern="%-5p %d [%t] %c: %m%n"/>[m
+[32m+[m[32m        </Console>[m
+[32m+[m[32m    </Appenders>[m
+[32m+[m
+[32m+[m[32m    <Loggers>[m
+[32m+[m
+[32m+[m[32m        <!-- CXF is used heavily by Mule for web services -->[m
+[32m+[m[32m        <AsyncLogger name="org.apache.cxf" level="WARN"/>[m
+[32m+[m
+[32m+[m[32m        <!-- Apache Commons tend to make a lot of noise which can clutter the log-->[m
+[32m+[m[32m        <AsyncLogger name="org.apache" level="WARN"/>[m
+[32m+[m
+[32m+[m[32m        <!-- Reduce startup noise -->[m
+[32m+[m[32m        <AsyncLogger name="org.springframework.beans.factory" level="WARN"/>[m
+[32m+[m
+[32m+[m[32m        <!-- Mule classes -->[m
+[32m+[m[32m        <AsyncLogger name="org.mule" level="INFO"/>[m
+[32m+[m[32m        <AsyncLogger name="com.mulesoft" level="INFO"/>[m
+[32m+[m
+[32m+[m[32m        <!-- Reduce DM verbosity -->[m
+[32m+[m[32m        <AsyncLogger name="org.jetel" level="WARN"/>[m
+[32m+[m[32m        <AsyncLogger name="Tracking" level="WARN"/>[m
+[32m+[m[41m        [m
+[32m+[m[32m        <!--AsyncLogger name="httpclient.wire" level="ALL" /-->[m
+[32m+[m
+[32m+[m[32m        <AsyncRoot level="INFO">[m
+[32m+[m[32m            <AppenderRef ref="Console"/>[m
+[32m+[m[32m        </AsyncRoot>[m
+[32m+[m[32m    </Loggers>[m
+[32m+[m
+[32m+[m[32m</Configuration>[m
+\ No newline at end of file[m
+[1mdiff --git a/target/classes/gitdemo.xml b/target/classes/gitdemo.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..9ec2bcc[m
+[1m--- /dev/null[m
+[1m+++ b/target/classes/gitdemo.xml[m
+[36m@@ -0,0 +1,14 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m
+[32m+[m[32m<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"[m
+[32m+[m	[32mxmlns:spring="http://www.springframework.org/schema/beans"[m[41m [m
+[32m+[m	[32mxmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"[m
+[32m+[m	[32mxsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd[m
+[32m+[m[32mhttp://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd[m
+[32m+[m[32mhttp://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">[m
+[32m+[m[32m    <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration"/>[m
+[32m+[m[32m    <flow name="gitdemoFlow">[m
+[32m+[m[32m        <http:listener config-ref="HTTP_Listener_Configuration" path="/" doc:name="HTTP"/>[m
+[32m+[m[32m        <set-payload value="Hi Tejaswi Rao" doc:name="Set Payload"/>[m
+[32m+[m[32m    </flow>[m
+[32m+[m[32m</mule>[m
+[1mdiff --git a/target/classes/log4j2.xml b/target/classes/log4j2.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..042ed44[m
+[1m--- /dev/null[m
+[1m+++ b/target/classes/log4j2.xml[m
+[36m@@ -0,0 +1,50 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="utf-8"?>[m
+[32m+[m[32m<Configuration>[m
+[32m+[m
+[32m+[m	[32m<!--These are some of the loggers you can enable.[m[41m [m
+[32m+[m	[32m    There are several more you can find in the documentation.[m[41m [m
+[32m+[m[32m        Besides this log4j configuration, you can also use Java VM environment variables[m
+[32m+[m[32m        to enable other logs like network (-Djavax.net.debug=ssl or all) and[m[41m [m
+[32m+[m[32m        Garbage Collector (-XX:+PrintGC). These will be append to the console, so you will[m[41m [m
+[32m+[m[32m        see them in the mule_ee.log file. -->[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    <Appenders>[m
+[32m+[m[32m        <RollingFile name="file" fileName="${sys:mule.home}${sys:file.separator}logs${sys:file.separator}gitdemo.log"[m[41m [m
+[32m+[m[32m                 filePattern="${sys:mule.home}${sys:file.separator}logs${sys:file.separator}gitdemo-%i.log">[m
+[32m+[m[32m            <PatternLayout pattern="%d [%t] %-5p %c - %m%n" />[m
+[32m+[m[32m            <SizeBasedTriggeringPolicy size="10 MB" />[m
+[32m+[m[32m            <DefaultRolloverStrategy max="10"/>[m
+[32m+[m[32m        </RollingFile>[m
+[32m+[m[32m    </Appenders>[m
+[32m+[m[32m    <Loggers>[m
+[32m+[m[41m    	[m
+[32m+[m[41m    	[m
+[32m+[m		[32m<!-- Http Logger shows wire traffic on DEBUG -->[m
+[32m+[m		[32m<AsyncLogger name="org.mule.module.http.internal.HttpMessageLogger" level="WARN"/>[m
+[32m+[m[41m	[m
+[32m+[m		[32m<!-- JDBC Logger shows queries and parameters values on DEBUG -->[m
+[32m+[m		[32m<AsyncLogger name="com.mulesoft.mule.transport.jdbc" level="WARN"/>[m
+[32m+[m[41m    [m
+[32m+[m[32m        <!-- CXF is used heavily by Mule for web services -->[m
+[32m+[m[32m        <AsyncLogger name="org.apache.cxf" level="WARN"/>[m
+[32m+[m
+[32m+[m[32m        <!-- Apache Commons tend to make a lot of noise which can clutter the log-->[m
+[32m+[m[32m        <AsyncLogger name="org.apache" level="WARN"/>[m
+[32m+[m
+[32m+[m[32m        <!-- Reduce startup noise -->[m
+[32m+[m[32m        <AsyncLogger name="org.springframework.beans.factory" level="WARN"/>[m
+[32m+[m
+[32m+[m[32m        <!-- Mule classes -->[m
+[32m+[m[32m        <AsyncLogger name="org.mule" level="INFO"/>[m
+[32m+[m[32m        <AsyncLogger name="com.mulesoft" level="INFO"/>[m
+[32m+[m
+[32m+[m[32m        <!-- Reduce DM verbosity -->[m
+[32m+[m[32m        <AsyncLogger name="org.jetel" level="WARN"/>[m
+[32m+[m[32m        <AsyncLogger name="Tracking" level="WARN"/>[m
+[32m+[m[41m        [m
+[32m+[m[32m        <AsyncRoot level="INFO">[m
+[32m+[m[32m            <AppenderRef ref="file" />[m
+[32m+[m[32m        </AsyncRoot>[m
+[32m+[m[32m    </Loggers>[m
+[32m+[m[32m</Configuration>[m
+\ No newline at end of file[m
+[1mdiff --git a/target/classes/mule-app.properties b/target/classes/mule-app.properties[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
+[1mdiff --git a/target/classes/mule-deploy.properties b/target/classes/mule-deploy.properties[m
+[1mnew file mode 100644[m
+[1mindex 0000000..79e2f26[m
+[1m--- /dev/null[m
+[1m+++ b/target/classes/mule-deploy.properties[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m#** GENERATED CONTENT ** Mule Application Deployment Descriptor[m
+[32m+[m[32m#Tue May 22 07:59:27 IST 2018[m
+[32m+[m[32mredeployment.enabled=true[m
+[32m+[m[32mencoding=UTF-8[m
+[32m+[m[32mdomain=default[m
+[32m+[m[32mconfig.resources=gitdemo.xml[m
+[1mdiff --git a/target/gitdemo-1.0.0-SNAPSHOT.zip b/target/gitdemo-1.0.0-SNAPSHOT.zip[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3524834[m
+Binary files /dev/null and b/target/gitdemo-1.0.0-SNAPSHOT.zip differ
+[1mdiff --git a/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst b/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
+[1mdiff --git a/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst b/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
+[1mdiff --git a/target/test-classes/gitdemo.xml b/target/test-classes/gitdemo.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..9ec2bcc[m
+[1m--- /dev/null[m
+[1m+++ b/target/test-classes/gitdemo.xml[m
+[36m@@ -0,0 +1,14 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m
+[32m+[m[32m<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"[m
+[32m+[m	[32mxmlns:spring="http://www.springframework.org/schema/beans"[m[41m [m
+[32m+[m	[32mxmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"[m
+[32m+[m	[32mxsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd[m
+[32m+[m[32mhttp://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd[m
+[32m+[m[32mhttp://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">[m
+[32m+[m[32m    <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration"/>[m
+[32m+[m[32m    <flow name="gitdemoFlow">[m
+[32m+[m[32m        <http:listener config-ref="HTTP_Listener_Configuration" path="/" doc:name="HTTP"/>[m
+[32m+[m[32m        <set-payload value="Hi Tejaswi Rao" doc:name="Set Payload"/>[m
+[32m+[m[32m    </flow>[m
+[32m+[m[32m</mule>[m
+[1mdiff --git a/target/test-classes/log4j2-test.xml b/target/test-classes/log4j2-test.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6351ae0[m
+[1m--- /dev/null[m
+[1m+++ b/target/test-classes/log4j2-test.xml[m
+[36m@@ -0,0 +1,35 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<Configuration>[m
+[32m+[m[32m    <Appenders>[m
+[32m+[m[32m        <Console name="Console" target="SYSTEM_OUT">[m
+[32m+[m[32m            <PatternLayout pattern="%-5p %d [%t] %c: %m%n"/>[m
+[32m+[m[32m        </Console>[m
+[32m+[m[32m    </Appenders>[m
+[32m+[m
+[32m+[m[32m    <Loggers>[m
+[32m+[m
+[32m+[m[32m        <!-- CXF is used heavily by Mule for web services -->[m
+[32m+[m[32m        <AsyncLogger name="org.apache.cxf" level="WARN"/>[m
+[32m+[m
+[32m+[m[32m        <!-- Apache Commons tend to make a lot of noise which can clutter the log-->[m
+[32m+[m[32m        <AsyncLogger name="org.apache" level="WARN"/>[m
+[32m+[m
+[32m+[m[32m        <!-- Reduce startup noise -->[m
+[32m+[m[32m        <AsyncLogger name="org.springframework.beans.factory" level="WARN"/>[m
+[32m+[m
+[32m+[m[32m        <!-- Mule classes -->[m
+[32m+[m[32m        <AsyncLogger name="org.mule" level="INFO"/>[m
+[32m+[m[32m        <AsyncLogger name="com.mulesoft" level="INFO"/>[m
+[32m+[m
+[32m+[m[32m        <!-- Reduce DM verbosity -->[m
+[32m+[m[32m        <AsyncLogger name="org.jetel" level="WARN"/>[m
+[32m+[m[32m        <AsyncLogger name="Tracking" level="WARN"/>[m
+[32m+[m[41m        [m
+[32m+[m[32m        <!--AsyncLogger name="httpclient.wire" level="ALL" /-->[m
+[32m+[m
+[32m+[m[32m        <AsyncRoot level="INFO">[m
+[32m+[m[32m            <AppenderRef ref="Console"/>[m
+[32m+[m[32m        </AsyncRoot>[m
+[32m+[m[32m    </Loggers>[m
+[32m+[m
+[32m+[m[32m</Configuration>[m
+\ No newline at end of file[m
+[1mdiff --git a/target/test-classes/mule-app.properties b/target/test-classes/mule-app.properties[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
+[1mdiff --git a/target/test-classes/mule-deploy.properties b/target/test-classes/mule-deploy.properties[m
+[1mnew file mode 100644[m
+[1mindex 0000000..79e2f26[m
+[1m--- /dev/null[m
+[1m+++ b/target/test-classes/mule-deploy.properties[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m#** GENERATED CONTENT ** Mule Application Deployment Descriptor[m
+[32m+[m[32m#Tue May 22 07:59:27 IST 2018[m
+[32m+[m[32mredeployment.enabled=true[m
+[32m+[m[32mencoding=UTF-8[m
+[32m+[m[32mdomain=default[m
+[32m+[m[32mconfig.resources=gitdemo.xml[m
